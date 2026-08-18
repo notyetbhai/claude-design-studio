@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthra AI — Volume Pricing & ROI Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { clay: '#CC6B49', amberGlow: '#D97706', obsidian: '#090D16' },
+          fontFamily: { serif: ["'Instrument Serif'", 'serif'], sans: ["'Inter'", 'sans-serif'], mono: ["'JetBrains Mono'", 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #090D16; color: #F8FAFC; }
+    .font-serif { font-family: 'Instrument Serif', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-panel { background: rgba(18, 23, 36, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-amber-500/30 selection:text-amber-200 antialiased flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090D16]/85 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-clay to-amberGlow flex items-center justify-center text-white font-bold">A</div>
+        <span class="font-bold text-lg">Anthra AI</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold">
+        <a href="index.html" class="text-neutral-400 hover:text-white">Home</a>
+        <a href="features.html" class="text-neutral-400 hover:text-white">Features</a>
+        <a href="playground.html" class="text-neutral-400 hover:text-white">Playground</a>
+        <a href="dashboard.html" class="text-neutral-400 hover:text-white">Dashboard</a>
+        <a href="docs.html" class="text-neutral-400 hover:text-white">Docs & API</a>
+        <a href="pricing.html" class="text-clay font-bold underline underline-offset-8">Pricing</a>
+        <a href="research.html" class="text-neutral-400 hover:text-white">Research</a>
+      </nav>
+
+      <a href="dashboard.html" class="px-4 py-2 rounded-xl bg-clay text-white text-xs font-semibold shadow-md">Open App →</a>
+    </div>
+  </header>
+
+  <!-- Pricing Body -->
+  <main class="max-w-6xl mx-auto px-6 py-16 space-y-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="text-xs font-mono font-bold uppercase tracking-widest text-clay">TRANSPARENT ECONOMICS</span>
+      <h1 class="text-4xl sm:text-6xl font-bold font-serif mt-2 mb-4">Invest in Cognitive Velocity</h1>
+      <p class="text-base text-neutral-400">Predictable volume pricing with automatic prompt caching discounts.</p>
+    </div>
+
+    <!-- Pricing 3 Tiers -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-3xl glass-panel flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-mono text-neutral-400 uppercase">Developer</span>
+          <h3 class="text-2xl font-bold font-serif mt-1 mb-2">Starter</h3>
+          <div class="text-4xl font-bold font-mono text-clay my-4">$20<span class="text-xs text-neutral-400 font-sans"> / seat / mo</span></div>
+          <ul class="space-y-3 text-xs text-neutral-300 mb-8">
+            <li>✓ Full access to Anthra-3.5 Sonnet</li>
+            <li>✓ 200,000 token context window</li>
+            <li>✓ Interactive Artifacts sandbox</li>
+          </ul>
+        </div>
+        <button class="w-full py-3 rounded-xl border border-white/10 text-xs font-bold uppercase hover:bg-white/10">Start Free Trial</button>
+      </div>
+
+      <div class="p-8 sm:p-10 rounded-3xl glass-panel ring-2 ring-clay shadow-2xl shadow-clay/20 flex flex-col justify-between relative scale-105">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-mono font-bold bg-clay text-white uppercase">Most Popular</div>
+        <div>
+          <span class="text-xs font-mono text-clay uppercase font-bold">Pro Organization</span>
+          <h3 class="text-3xl font-bold font-serif mt-1 mb-2">Unlimited Velocity</h3>
+          <div class="text-4xl font-bold font-mono text-clay my-4">$49<span class="text-xs text-neutral-400 font-sans"> / seat / mo</span></div>
+          <ul class="space-y-3 text-xs text-neutral-200 mb-8">
+            <li>✓ 1,000,000 token context window</li>
+            <li>✓ Sub-second streaming priority</li>
+            <li>✓ Zero-data retention guarantee</li>
+            <li>✓ 24/7 dedicated engineering support</li>
+          </ul>
+        </div>
+        <button class="w-full py-3.5 rounded-xl bg-clay text-white text-xs font-bold uppercase shadow-lg shadow-clay/30 hover:opacity-90">Unlock Pro →</button>
+      </div>
+
+      <div class="p-8 rounded-3xl glass-panel flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-mono text-neutral-400 uppercase">Enterprise</span>
+          <h3 class="text-2xl font-bold font-serif mt-1 mb-2">Matrix Dedicated</h3>
+          <div class="text-4xl font-bold font-mono text-clay my-4">Custom</div>
+          <ul class="space-y-3 text-xs text-neutral-300 mb-8">
+            <li>✓ Private VPC & On-Prem deployment</li>
+            <li>✓ Dedicated GPU compute clusters</li>
+            <li>✓ 99.999% SLA uptime guarantee</li>
+          </ul>
+        </div>
+        <button class="w-full py-3 rounded-xl border border-white/10 text-xs font-bold uppercase hover:bg-white/10">Contact Solutions Team</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full text-center text-xs font-mono text-neutral-500">
+    © 2026 Anthra AI Technologies, Inc. <a href="index.html" class="text-neutral-400 hover:text-white underline ml-2">Back to Homepage</a>
+  </footer>
+
+</body>
+</html>

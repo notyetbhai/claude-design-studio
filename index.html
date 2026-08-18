@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthra Studio — Open-Source AI Design Engine & Architecture Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { clay: '#CC6B49', amberGlow: '#D97706', obsidian: '#090D16' },
+          fontFamily: { serif: ["'Instrument Serif'", 'serif'], sans: ["'Inter'", 'sans-serif'], mono: ["'JetBrains Mono'", 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #090D16; color: #F8FAFC; }
+    .font-serif { font-family: 'Instrument Serif', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-panel { background: rgba(18, 23, 36, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-panel:hover { border-color: rgba(204, 107, 73, 0.35); }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-amber-500/30 selection:text-amber-200 antialiased flex flex-col justify-between">
+
+  <!-- Ambient Glow -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-tr from-clay/20 to-amberGlow/20 blur-[150px] rounded-full"></div>
+  </div>
+
+  <!-- Persistent Header with Open Source GitHub Badge & Real Page Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090D16]/90 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-clay to-amberGlow flex items-center justify-center text-white font-bold">A</div>
+          <div class="flex items-baseline gap-2">
+            <span class="font-bold text-lg">Anthra Studio</span>
+            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-clay/15 text-clay border border-clay/30">v2.4.0 • Apache-2.0</span>
+          </div>
+        </a>
+
+        <!-- Interactive GitHub Star Badge -->
+        <button id="starBtn" onclick="incrementStar()" class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono transition-all">
+          <span class="text-amber-400">★</span>
+          <span class="text-white font-semibold">Star</span>
+          <span id="starCount" class="text-[10px] text-neutral-400 bg-black/40 px-1.5 py-0.2 rounded">14,820</span>
+        </button>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold">
+        <a href="index.html" class="text-clay font-bold underline underline-offset-8">Home</a>
+        <a href="features.html" class="text-neutral-400 hover:text-white">Features</a>
+        <a href="planner.html" class="text-neutral-400 hover:text-white">AI Planner</a>
+        <a href="dashboard.html" class="text-neutral-400 hover:text-white">Dashboard</a>
+        <a href="playground.html" class="text-neutral-400 hover:text-white">Playground</a>
+        <a href="docs.html" class="text-neutral-400 hover:text-white">Docs & API</a>
+        <a href="pricing.html" class="text-neutral-400 hover:text-white">Pricing</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="auth.html" class="hidden sm:inline-block px-3 py-1.5 rounded-lg text-xs font-mono border border-white/10 text-neutral-300 hover:text-white">Sign In</a>
+        <a href="planner.html" class="px-4 py-2 rounded-xl bg-clay text-white text-xs font-semibold shadow-lg shadow-clay/20 hover:scale-105 transition-all">Auto-Planner →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Content -->
+  <main class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono bg-clay/10 text-clay border border-clay/30 mb-8 animate-pulse">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span>Open Source • Built for Human Craftsmanship • NVIDIA NIM Accelerated</span>
+    </div>
+
+    <h1 class="text-5xl sm:text-7xl font-bold tracking-tight mb-8 font-serif leading-[1.05]">
+      Intelligence crafted for <span class="italic font-normal text-clay">human curiosity</span> and scale.
+    </h1>
+
+    <p class="text-lg text-neutral-400 max-w-3xl mx-auto leading-relaxed mb-10">
+      An open-source architectural web design engine engineered with mathematical precision, constitutional safety, and clean human-written code.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+      <a href="planner.html" class="px-8 py-4 rounded-xl bg-clay text-white font-medium text-sm shadow-xl shadow-clay/30 hover:opacity-90 transition-all hover:scale-105">
+        Launch Autonomous Planner →
+      </a>
+      <a href="dashboard.html" class="px-7 py-4 rounded-xl glass-panel text-neutral-200 font-medium text-sm hover:bg-white/10 transition-all">
+        Open Agent Dashboard
+      </a>
+    </div>
+
+    <!-- Interactive Open-Source CLI Quickstart Box -->
+    <div class="max-w-2xl mx-auto rounded-2xl border border-white/10 overflow-hidden bg-black/60 shadow-2xl font-mono text-xs text-left">
+      <div class="px-4 py-2.5 border-b border-white/10 bg-neutral-900/90 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+          <div class="ml-2 flex gap-2">
+            <button onclick="setCli('npx')" id="tab-npx" class="px-2 py-0.5 rounded bg-white/10 text-white font-bold text-[11px]">npx</button>
+            <button onclick="setCli('pnpm')" id="tab-pnpm" class="px-2 py-0.5 rounded text-neutral-500 text-[11px]">pnpm</button>
+            <button onclick="setCli('docker')" id="tab-docker" class="px-2 py-0.5 rounded text-neutral-500 text-[11px]">docker</button>
+            <button onclick="setCli('git')" id="tab-git" class="px-2 py-0.5 rounded text-neutral-500 text-[11px]">git</button>
+          </div>
+        </div>
+
+        <button onclick="copyCli()" id="copyCliBtn" class="text-[11px] text-neutral-400 hover:text-white">Copy</button>
+      </div>
+
+      <div class="p-4 text-emerald-400 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-neutral-500 select-none">$</span>
+          <span id="cliCmd" class="text-neutral-100">npx @anthra/studio init my-app</span>
+        </div>
+        <span class="text-[10px] text-neutral-500 hidden sm:inline">zero-config setup</span>
+      </div>
+    </div>
+
+    <!-- Open Source Stats Grid -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-3xl glass-panel text-center font-mono">
+      <div><div class="text-3xl font-bold text-white">14.8k ★</div><div class="text-xs text-neutral-400 uppercase mt-1">GitHub Stars</div></div>
+      <div><div class="text-3xl font-bold text-emerald-400">100%</div><div class="text-xs text-neutral-400 uppercase mt-1">Open Source</div></div>
+      <div><div class="text-3xl font-bold text-white">&lt; 2ms</div><div class="text-xs text-neutral-400 uppercase mt-1">NVIDIA NIM TTFT</div></div>
+      <div><div class="text-3xl font-bold text-clay">Apache 2.0</div><div class="text-xs text-neutral-400 uppercase mt-1">Commercial Free</div></div>
+    </div>
+
+    <!-- Dedicated Pages Grid -->
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+      <a href="features.html" class="p-8 rounded-3xl glass-panel group hover:-translate-y-1 transition-all">
+        <span class="text-xs font-mono text-clay font-bold">MODULE 01</span>
+        <h3 class="text-2xl font-bold font-serif mt-2 mb-2">Capabilities & Bento Grid</h3>
+        <p class="text-xs text-neutral-400">12-column asymmetrical bento layout and formal verification.</p>
+        <span class="text-xs font-mono text-clay mt-4 inline-block font-bold">Open Features Page →</span>
+      </a>
+
+      <a href="planner.html" class="p-8 rounded-3xl glass-panel border-emerald-500/30 bg-emerald-950/20 group hover:-translate-y-1 transition-all">
+        <span class="text-xs font-mono text-emerald-400 font-bold">MODULE 02</span>
+        <h3 class="text-2xl font-bold font-serif mt-2 mb-2">Autonomous System Architect</h3>
+        <p class="text-xs text-neutral-400">Plan anything on your own in natural language. Generates schemas.</p>
+        <span class="text-xs font-mono text-emerald-400 mt-4 inline-block font-bold">Launch Auto-Planner →</span>
+      </a>
+
+      <a href="dashboard.html" class="p-8 rounded-3xl glass-panel group hover:-translate-y-1 transition-all">
+        <span class="text-xs font-mono text-clay font-bold">MODULE 03</span>
+        <h3 class="text-2xl font-bold font-serif mt-2 mb-2">Agent Control Dashboard</h3>
+        <p class="text-xs text-neutral-400">Live throughput (48,210 TPS) and streaming thought traces.</p>
+        <span class="text-xs font-mono text-clay mt-4 inline-block font-bold">Open Dashboard →</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Persistent Footer -->
+  <footer class="border-t border-white/10 py-12 px-6 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-500">
+    <div>© 2026 Anthra Studio Contributors. Open Source under Apache-2.0.</div>
+    <div class="flex gap-6">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="features.html" class="hover:text-white">Features</a>
+      <a href="planner.html" class="hover:text-white">Planner</a>
+      <a href="dashboard.html" class="hover:text-white">Dashboard</a>
+      <a href="docs.html" class="hover:text-white">Docs</a>
+      <a href="pricing.html" class="hover:text-white">Pricing</a>
+      <a href="research.html" class="hover:text-white">Research</a>
+      <a href="settings.html" class="hover:text-white">Settings</a>
+    </div>
+  </footer>
+
+  <script>
+    const cmds = {
+      npx: 'npx @anthra/studio init my-app',
+      pnpm: 'pnpm create @anthra/app',
+      docker: 'docker run -d -p 3000:3000 ghcr.io/anthra-design/studio:latest',
+      git: 'git clone https://github.com/anthra-design/claude-design-studio.git'
+    };
+
+    function setCli(tab) {
+      ['npx', 'pnpm', 'docker', 'git'].forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        if (el) el.className = t === tab ? 'px-2 py-0.5 rounded bg-white/10 text-white font-bold text-[11px]' : 'px-2 py-0.5 rounded text-neutral-500 text-[11px]';
+      });
+      document.getElementById('cliCmd').innerText = cmds[tab];
+    }
+
+    function copyCli() {
+      const text = document.getElementById('cliCmd').innerText;
+      navigator.clipboard.writeText(text);
+      const btn = document.getElementById('copyCliBtn');
+      btn.innerText = 'Copied!';
+      setTimeout(() => btn.innerText = 'Copy', 2000);
+    }
+
+    let stars = 14820;
+    function incrementStar() {
+      stars++;
+      document.getElementById('starCount').innerText = stars.toLocaleString();
+      document.getElementById('starBtn').className = 'hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono';
+    }
+  </script>
+</body>
+</html>

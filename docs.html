@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthra AI — Developer Documentation & SDK Reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { clay: '#CC6B49', amberGlow: '#D97706', obsidian: '#090D16' },
+          fontFamily: { serif: ["'Instrument Serif'", 'serif'], sans: ["'Inter'", 'sans-serif'], mono: ["'JetBrains Mono'", 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #090D16; color: #F8FAFC; }
+    .font-serif { font-family: 'Instrument Serif', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-panel { background: rgba(18, 23, 36, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-amber-500/30 selection:text-amber-200 antialiased flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090D16]/85 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-clay to-amberGlow flex items-center justify-center text-white font-bold">A</div>
+        <span class="font-bold text-lg">Anthra AI</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold">
+        <a href="index.html" class="text-neutral-400 hover:text-white">Home</a>
+        <a href="features.html" class="text-neutral-400 hover:text-white">Features</a>
+        <a href="playground.html" class="text-neutral-400 hover:text-white">Playground</a>
+        <a href="dashboard.html" class="text-neutral-400 hover:text-white">Dashboard</a>
+        <a href="docs.html" class="text-clay font-bold underline underline-offset-8">Docs & API</a>
+        <a href="pricing.html" class="text-neutral-400 hover:text-white">Pricing</a>
+        <a href="research.html" class="text-neutral-400 hover:text-white">Research</a>
+      </nav>
+
+      <a href="dashboard.html" class="px-4 py-2 rounded-xl bg-clay text-white text-xs font-semibold shadow-md">Open App →</a>
+    </div>
+  </header>
+
+  <!-- Docs Body -->
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-10">
+    <div>
+      <span class="text-xs font-mono font-bold uppercase text-clay">DEVELOPER REFERENCE</span>
+      <h1 class="text-4xl sm:text-5xl font-bold font-serif mt-2 mb-3">API Reference & SDK Integration</h1>
+      <p class="text-base text-neutral-400">Stream reasoning tokens with sub-millisecond first-token latency.</p>
+    </div>
+
+    <!-- Code Card -->
+    <div class="rounded-3xl glass-panel overflow-hidden">
+      <div class="px-6 py-3 border-b border-white/10 bg-black/40 flex justify-between items-center text-xs font-mono">
+        <span class="text-amber-400 font-bold">TypeScript SDK (v3.5)</span>
+        <span class="text-neutral-400">zero-dependency</span>
+      </div>
+      <div class="p-6 overflow-x-auto font-mono text-xs sm:text-sm text-neutral-200 leading-relaxed bg-[#05070c]">
+        <pre><code>import { AnthraClient } from '@anthra/sdk';
+
+const client = new AnthraClient({
+  apiKey: process.env.ANTHRA_API_KEY,
+  environment: 'production'
+});
+
+// Stream reasoning tokens with sub-millisecond TTFT
+const response = await client.messages.stream({
+  model: 'anthra-3.5-sonnet',
+  max_tokens: 4096,
+  system: 'You are an elite reasoning assistant.',
+  messages: [
+    { role: 'user', content: 'Synthesize optimal microservice latency bounds.' }
+  ]
+});
+
+for await (const chunk of response) {
+  process.stdout.write(chunk.delta?.text || '');
+}</code></pre>
+      </div>
+    </div>
+
+    <!-- REST & MCP Endpoints -->
+    <div class="space-y-4">
+      <h3 class="text-xl font-bold font-serif">Core REST & Model Context Protocol (MCP) Endpoints</h3>
+      <div class="space-y-3 font-mono text-xs">
+        <div class="p-4 rounded-2xl border border-white/10 bg-black/20 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <span class="px-2 py-0.5 rounded bg-clay/20 text-clay font-bold">POST</span>
+            <span class="text-white font-bold">/v1/messages</span>
+            <span class="text-neutral-400 hidden sm:inline">— Synthesize or stream tokens</span>
+          </div>
+          <span class="text-emerald-400 font-bold">200 OK</span>
+        </div>
+        <div class="p-4 rounded-2xl border border-white/10 bg-black/20 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <span class="px-2 py-0.5 rounded bg-clay/20 text-clay font-bold">POST</span>
+            <span class="text-white font-bold">/v1/mcp/call</span>
+            <span class="text-neutral-400 hidden sm:inline">— Model Context Protocol (MCP) tool dispatch</span>
+          </div>
+          <span class="text-emerald-400 font-bold">200 OK</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full text-center text-xs font-mono text-neutral-500">
+    © 2026 Anthra AI Technologies, Inc. <a href="index.html" class="text-neutral-400 hover:text-white underline ml-2">Back to Homepage</a>
+  </footer>
+
+</body>
+</html>

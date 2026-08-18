@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthra AI — Step 1: Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { clay: '#CC6B49', amberGlow: '#D97706', obsidian: '#090D16' },
+          fontFamily: { serif: ["'Instrument Serif'", 'serif'], sans: ["'Inter'", 'sans-serif'], mono: ["'JetBrains Mono'", 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #090D16; color: #F8FAFC; }
+    .font-serif { font-family: 'Instrument Serif', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-panel { background: rgba(18, 23, 36, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-amber-500/30 selection:text-amber-200 antialiased flex flex-col items-center justify-center p-6 relative">
+
+  <div class="w-full max-w-md p-8 sm:p-10 rounded-3xl glass-panel text-center space-y-7 shadow-2xl">
+    <div class="inline-flex flex-col items-center">
+      <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-clay to-amberGlow flex items-center justify-center text-white font-bold text-xl shadow-lg mb-3">A</div>
+      <h2 class="text-3xl font-bold font-serif text-white">Sign In to Anthra AI</h2>
+      <p class="text-xs text-neutral-400 font-mono mt-1">Step 1: Authenticate to access your autonomous design dashboard</p>
+    </div>
+
+    <!-- 1-Click Instant Demo Login -->
+    <a href="api-setup.html" class="w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-amber-500/20 hover:from-amber-500/30 border border-amber-500/30 text-amber-300 font-semibold text-xs flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shadow-sm">
+      <span>⚡ 1-Click Demo Login (Lead Architect) →</span>
+    </a>
+
+    <div class="flex items-center gap-3">
+      <div class="h-[1px] flex-1 bg-white/10"></div>
+      <span class="text-[11px] font-mono text-neutral-500 uppercase">Or with credentials</span>
+      <div class="h-[1px] flex-1 bg-white/10"></div>
+    </div>
+
+    <form action="api-setup.html" class="space-y-4 text-left">
+      <div>
+        <label class="text-xs font-mono text-neutral-400 block mb-1">Work Email</label>
+        <input type="email" required value="alex.vance@enterprise.com" class="w-full p-3 rounded-xl border border-white/10 bg-black/40 text-white font-sans text-xs focus:outline-none focus:border-amber-500">
+      </div>
+      <div>
+        <label class="text-xs font-mono text-neutral-400 block mb-1">Password</label>
+        <input type="password" required value="••••••••••••" class="w-full p-3 rounded-xl border border-white/10 bg-black/40 text-white font-sans text-xs focus:outline-none focus:border-amber-500">
+      </div>
+
+      <button type="submit" class="w-full py-3.5 rounded-xl bg-clay text-white font-bold text-xs uppercase tracking-wider shadow-lg hover:opacity-90 transition-all hover:scale-[1.02]">
+        Sign In & Connect API →
+      </button>
+    </form>
+
+    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-neutral-400">
+      <a href="index.html" class="hover:text-white">← Back to Home</a>
+      <span class="text-emerald-400">SOC2 Certified</span>
+    </div>
+  </div>
+
+</body>
+</html>

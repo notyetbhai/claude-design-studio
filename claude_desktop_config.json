@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "claude-design-studio": {
+      "command": "node",
+      "args": [
+        "/home/user/claude-design-mcp-server.js"
+      ],
+      "env": {
+        "ANTHROPIC_API_KEY": "your-anthropic-api-key-here"
+      }
+    }
+  }
+}

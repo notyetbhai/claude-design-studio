@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthra Studio — Open-Source UI Component Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { clay: '#CC6B49', amberGlow: '#D97706', obsidian: '#090D16' },
+          fontFamily: { serif: ["'Instrument Serif'", 'serif'], sans: ["'Inter'", 'sans-serif'], mono: ["'JetBrains Mono'", 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #090D16; color: #F8FAFC; }
+    .font-serif { font-family: 'Instrument Serif', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-panel { background: rgba(18, 23, 36, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-panel:hover { border-color: rgba(204, 107, 73, 0.35); }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-amber-500/30 selection:text-amber-200 antialiased flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090D16]/85 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none">
+          <rect x="3" y="3" width="42" height="42" rx="12" fill="#CC6B49" />
+          <g transform="translate(24, 24)">
+            <path d="M0 -13 C2 -6, 6 -2, 13 0 C6 2, 2 6, 0 13 C-2 6, -6 2, -13 0 C-6 -2, -2 -6, 0 -13 Z" fill="#FFFFFF" />
+          </g>
+        </svg>
+        <span class="font-bold text-lg">Anthra Studio</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold">
+        <a href="index.html" class="text-neutral-400 hover:text-white">Home</a>
+        <a href="features.html" class="text-neutral-400 hover:text-white">Features</a>
+        <a href="components.html" class="text-clay font-bold underline underline-offset-8">Components</a>
+        <a href="planner.html" class="text-neutral-400 hover:text-white">AI Planner</a>
+        <a href="dashboard.html" class="text-neutral-400 hover:text-white">Dashboard</a>
+        <a href="docs.html" class="text-neutral-400 hover:text-white">Docs & API</a>
+        <a href="pricing.html" class="text-neutral-400 hover:text-white">Pricing</a>
+      </nav>
+
+      <a href="planner.html" class="px-4 py-2 rounded-xl bg-clay text-white text-xs font-semibold shadow-md">Auto-Planner →</a>
+    </div>
+  </header>
+
+  <!-- Main Components Body -->
+  <main class="max-w-6xl mx-auto px-6 py-16 space-y-12">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="text-xs font-mono font-bold uppercase tracking-widest text-clay">OPEN-SOURCE UI GALLERY</span>
+      <h1 class="text-4xl sm:text-6xl font-bold font-serif mt-2 mb-4">Curated Claude-Aesthetic Component Library</h1>
+      <p class="text-base text-neutral-400">Production-ready React JSX and Tailwind CSS component blocks ready to copy-paste.</p>
+    </div>
+
+    <!-- Component 1: Hero Section -->
+    <div class="p-8 rounded-3xl glass-panel space-y-4">
+      <div class="flex justify-between items-center">
+        <div>
+          <h3 class="text-2xl font-bold font-serif text-white">Claude Editorial Hero with Pill Badge</h3>
+          <p class="text-xs text-neutral-400">Signature Instrument Serif headline with italic keyword highlight and dual CTAs.</p>
+        </div>
+        <button onclick="copySnippet('heroCode')" class="px-4 py-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-xs font-mono text-white border border-white/10">Copy JSX</button>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs text-neutral-200 overflow-x-auto">
+        <pre><code id="heroCode">&lt;section className="pt-24 pb-16 px-6 max-w-5xl mx-auto text-center"&gt;
+  &lt;div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono bg-[#CC6B49]/10 text-[#CC6B49] border border-[#CC6B49]/30 mb-8 animate-pulse"&gt;
+    ✨ Introducing Next-Gen Reasoning Engine
+  &lt;/div&gt;
+  &lt;h1 className="text-6xl font-bold font-serif mb-6"&gt;
+    Intelligence crafted for &lt;span className="italic font-normal text-[#CC6B49]"&gt;human discovery&lt;/span&gt;.
+  &lt;/h1&gt;
+  &lt;button className="px-8 py-4 rounded-xl bg-[#CC6B49] text-white font-semibold text-xs uppercase shadow-xl"&gt;
+    Get Started →
+  &lt;/button&gt;
+&lt;/section&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Component 2: Bento Grid -->
+    <div class="p-8 rounded-3xl glass-panel space-y-4">
+      <div class="flex justify-between items-center">
+        <div>
+          <h3 class="text-2xl font-bold font-serif text-white">12-Column Asymmetrical Bento Grid</h3>
+          <p class="text-xs text-neutral-400">8-column and 4-column asymmetrical card splits with metric percentage gauges.</p>
+        </div>
+        <button onclick="copySnippet('bentoCode')" class="px-4 py-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-xs font-mono text-white border border-white/10">Copy JSX</button>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-black/60 border border-white/10 font-mono text-xs text-neutral-200 overflow-x-auto">
+        <pre><code id="bentoCode">&lt;div className="grid grid-cols-12 gap-6 max-w-6xl mx-auto"&gt;
+  &lt;div className="col-span-12 md:col-span-8 p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10"&gt;
+    &lt;span className="px-3 py-1 rounded text-xs font-mono bg-[#CC6B49]/10 text-[#CC6B49]"&gt;Alignment v4&lt;/span&gt;
+    &lt;h3 className="text-2xl font-bold font-serif mt-3"&gt;Constitutional Nuance & Alignment&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div className="col-span-12 md:col-span-4 p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10"&gt;
+    &lt;span className="px-3 py-1 rounded text-xs font-mono bg-[#CC6B49]/10 text-[#CC6B49]"&gt;1M+ Context&lt;/span&gt;
+    &lt;h3 className="text-2xl font-bold font-serif mt-3"&gt;99.98% Recall&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full text-center text-xs font-mono text-neutral-500">
+    © 2026 Anthra Studio Contributors. <a href="index.html" class="text-neutral-400 hover:text-white underline ml-2">Back to Homepage</a>
+  </footer>
+
+  <script>
+    function copySnippet(id) {
+      const code = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(code);
+      alert('Component JSX copied to clipboard!');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="anthra-gradient-primary" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E07A5F" />
+      <stop offset="45%" stop-color="#CC6B49" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="anthra-gradient-glow" x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#EA580C" stop-opacity="0.7" />
+    </linearGradient>
+    <filter id="anthra-shadow" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#CC6B49" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Container with subtle border -->
+  <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#anthra-gradient-primary)" filter="url(#anthra-shadow)" />
+  <rect x="3.5" y="3.5" width="41" height="41" rx="11.5" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1" />
+
+  <!-- Harmonic Prism Optical Star Emblem (Claude / Anthropic Geometric Bloom) -->
+  <g transform="translate(24, 24)">
+    <!-- 4 Cardinal Petals -->
+    <path d="M0 -13 C2 -6, 6 -2, 13 0 C6 2, 2 6, 0 13 C-2 6, -6 2, -13 0 C-6 -2, -2 -6, 0 -13 Z" fill="#FFFFFF" fill-opacity="0.95" />
+    
+    <!-- 4 Diagonal Accent Petals -->
+    <path d="M-8 -8 C-4 -4, -4 -2, 0 0 C-4 2, -4 4, -8 8 C-4 4, -2 4, 0 0 C-2 -4, -4 -4, -8 -8 Z" fill="url(#anthra-gradient-glow)" transform="rotate(45)" opacity="0.8" />
+    <path d="M8 -8 C4 -4, 4 -2, 0 0 C4 2, 4 4, 8 8 C4 4, 2 4, 0 0 C2 -4, 4 -4, 8 -8 Z" fill="url(#anthra-gradient-glow)" transform="rotate(45)" opacity="0.8" />
+
+    <!-- Center Core Dot -->
+    <circle cx="0" cy="0" r="2.5" fill="#121110" />
+    <circle cx="0" cy="0" r="1.2" fill="#FDE68A" />
+  </g>
+</svg>

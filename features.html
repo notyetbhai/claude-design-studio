@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthra AI — Capabilities & Bento Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { clay: '#CC6B49', amberGlow: '#D97706', obsidian: '#090D16' },
+          fontFamily: { serif: ["'Instrument Serif'", 'serif'], sans: ["'Inter'", 'sans-serif'], mono: ["'JetBrains Mono'", 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #090D16; color: #F8FAFC; }
+    .font-serif { font-family: 'Instrument Serif', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-panel { background: rgba(18, 23, 36, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-panel:hover { border-color: rgba(204, 107, 73, 0.35); }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-amber-500/30 selection:text-amber-200 antialiased flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#090D16]/85 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-clay to-amberGlow flex items-center justify-center text-white font-bold">A</div>
+        <span class="font-bold text-lg">Anthra AI</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold">
+        <a href="index.html" class="text-neutral-400 hover:text-white">Home</a>
+        <a href="features.html" class="text-clay font-bold underline underline-offset-8">Features</a>
+        <a href="playground.html" class="text-neutral-400 hover:text-white">Playground</a>
+        <a href="dashboard.html" class="text-neutral-400 hover:text-white">Dashboard</a>
+        <a href="docs.html" class="text-neutral-400 hover:text-white">Docs & API</a>
+        <a href="pricing.html" class="text-neutral-400 hover:text-white">Pricing</a>
+        <a href="research.html" class="text-neutral-400 hover:text-white">Research</a>
+      </nav>
+
+      <a href="dashboard.html" class="px-4 py-2 rounded-xl bg-clay text-white text-xs font-semibold shadow-md">Open App →</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-16 space-y-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="text-xs font-mono font-bold uppercase tracking-widest text-clay">CAPABILITIES SPECIFICATION</span>
+      <h1 class="text-4xl sm:text-6xl font-bold font-serif mt-2 mb-4">Engineered for Nuance & Mathematical Depth</h1>
+      <p class="text-base text-neutral-400">Multi-modal chain-of-thought processing and deterministic checkpoint recovery.</p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-8 p-8 sm:p-10 rounded-3xl glass-panel">
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-semibold bg-clay/10 text-clay">Safe Alignment v4</span>
+        <h3 class="text-3xl font-bold mt-4 mb-2 font-serif">Constitutional Nuance & Alignment</h3>
+        <p class="text-sm text-neutral-400 leading-relaxed max-w-xl">Trained with self-improving safety feedback loops refusing harmful actions while maintaining maximum helpfulness.</p>
+        <div class="mt-6 p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-xs text-neutral-300">
+          <div class="flex justify-between items-center mb-1">
+            <span>Safety Invariant Check</span>
+            <span class="text-emerald-400 font-bold">100% Deterministic</span>
+          </div>
+          <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+            <div class="bg-clay h-full rounded-full" style="width: 99.2%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 md:col-span-4 p-8 rounded-3xl glass-panel">
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-semibold bg-clay/10 text-clay">Long Context</span>
+        <h3 class="text-2xl font-bold mt-4 mb-2 font-serif">1M+ Token Recall</h3>
+        <p class="text-xs text-neutral-400 leading-relaxed mb-6">Recall exact details across entire codebases with 99.98% needle accuracy.</p>
+        <div class="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs text-center font-bold">
+          99.98% Retrieval Score
+        </div>
+      </div>
+
+      <div class="col-span-12 md:col-span-4 p-8 rounded-3xl glass-panel">
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-semibold bg-clay/10 text-clay">Formal Logic</span>
+        <h3 class="text-2xl font-bold mt-4 mb-2 font-serif">Mathematical Rigor</h3>
+        <p class="text-xs text-neutral-400 mb-6">Formal logic verification and step-by-step symbolic derivation.</p>
+        <div class="p-3 rounded-lg bg-black/40 border border-white/5 font-mono text-[11px] text-neutral-300">
+          ∀x ∈ State: LogicProof(x) ≡ Valid
+        </div>
+      </div>
+
+      <div class="col-span-12 md:col-span-8 p-8 sm:p-10 rounded-3xl glass-panel">
+        <span class="px-3 py-1 rounded-md text-xs font-mono font-semibold bg-clay/10 text-clay">Autonomous Agents</span>
+        <h3 class="text-3xl font-bold mt-4 mb-2 font-serif">Adaptive Agentic Execution</h3>
+        <p class="text-sm text-neutral-400 leading-relaxed max-w-xl">Orchestrates real-world tools, multi-step API calls, and browser interactions with checkpoint recovery.</p>
+        <div class="mt-6 flex flex-wrap gap-2 font-mono text-xs">
+          <span class="px-3 py-1 rounded-lg bg-clay text-white font-semibold">1. Ingress</span>
+          <span class="px-3 py-1 rounded-lg bg-white/10 text-neutral-300">2. Deconstruct</span>
+          <span class="px-3 py-1 rounded-lg bg-white/10 text-neutral-300">3. Tool Call</span>
+          <span class="px-3 py-1 rounded-lg bg-white/10 text-neutral-300">4. Verified Output</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10 px-6 max-w-7xl mx-auto w-full text-center text-xs font-mono text-neutral-500">
+    © 2026 Anthra AI Technologies, Inc. <a href="index.html" class="text-neutral-400 hover:text-white underline ml-2">Back to Homepage</a>
+  </footer>
+
+</body>
+</html>
